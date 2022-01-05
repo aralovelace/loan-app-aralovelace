@@ -1,12 +1,15 @@
 import { Tab } from "@headlessui/react";
-import LoanForm from "./LoanForm";
-import LoanResult from "./LoanResult";
+import LoanForm from "./Loan/LoanForm";
+import LoanResult from "./Loan/LoanResult";
+import AddToast from "./Toasts/AddToast";
+import ToastList from "./Toasts/ToastList";
+import React from "react";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function Loan() {
+const App = () => {
   return (
     <section className="w-full max-w-screen-sm mx-auto">
       <div className="w-full max-w-md px-2 pt-10 pb-16 sm:px-0">
@@ -26,6 +29,13 @@ function Loan() {
             >
               Loan Computation
             </Tab>
+            <Tab
+              className="w-full py-2.5 text-sm leading-5 font-medium text-blue-700 rounded-lg 
+            focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60
+            text-blue-100 hover:bg-white/[0.12] hover:text-white"
+            >
+              Toast
+            </Tab>
           </Tab.List>
 
           <Tab.Panels className="mt-2">
@@ -35,13 +45,18 @@ function Loan() {
                 "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60"
               )}
             >
-              <LoanForm /> <LoanResult />
+              <LoanForm />
+              <LoanResult />
+            </Tab.Panel>
+            <Tab.Panel>
+              <AddToast />
+              <ToastList />
             </Tab.Panel>
           </Tab.Panels>
         </Tab.Group>
       </div>
     </section>
   );
-}
+};
 
-export default Loan;
+export default App;

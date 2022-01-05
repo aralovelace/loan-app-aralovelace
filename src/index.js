@@ -2,17 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import Loan from "./Loan";
-import { createStore } from "redux";
-import reducer from "./state/reducer";
+import App from "./App";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk";
+import rootReducer from "./rootReducer";
 
-const store = createStore(reducer, composeWithDevTools());
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <Provider store={store}>
-    <Loan />
+    <App />
   </Provider>,
   rootElement
 );

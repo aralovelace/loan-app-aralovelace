@@ -1,13 +1,13 @@
 import React from "react";
 import pipe from "lodash/flow";
 import { partial } from "lodash";
-import { preventDefault, withChange } from "./helpers";
-import { changeLoanRequest, submitLoanRequest } from "./state/actions";
+import { preventDefault, withChange } from "../helpers";
+import { changeLoanRequest, submitLoanRequest } from "../state";
 import { connect } from "react-redux";
 
-function LoanForm({ loanRequest, changeLoanRequest, submitLoanRequest }) {
+const LoanForm = ({ loan, changeLoanRequest, submitLoanRequest }) => {
   const handleChange = withChange(changeLoanRequest);
-  const handleSubmit = partial(submitLoanRequest, loanRequest);
+  const handleSubmit = partial(submitLoanRequest, loan);
 
   return (
     <form onSubmit={pipe(preventDefault, handleSubmit)}>
@@ -18,7 +18,7 @@ function LoanForm({ loanRequest, changeLoanRequest, submitLoanRequest }) {
         <input
           name="amount"
           type="number"
-          value={loanRequest.amount}
+          value={loan.loanRequest.amount}
           onChange={handleChange}
           required
           className="form-input ml-4"
@@ -31,7 +31,7 @@ function LoanForm({ loanRequest, changeLoanRequest, submitLoanRequest }) {
         <input
           name="term"
           type="number"
-          value={loanRequest.term}
+          value={loan.loanRequest.term}
           onChange={handleChange}
           required
           className="form-input ml-4"
@@ -44,7 +44,7 @@ function LoanForm({ loanRequest, changeLoanRequest, submitLoanRequest }) {
         <input
           name="interest"
           type="number"
-          value={loanRequest.interest}
+          value={loan.loanRequest.interest}
           onChange={handleChange}
           required
           className="form-input ml-4"
@@ -60,11 +60,10 @@ function LoanForm({ loanRequest, changeLoanRequest, submitLoanRequest }) {
       </div>
     </form>
   );
-}
-function mapState({ loanRequestInput }) {
-  return {
-    loanRequest: loanRequestInput,
-  };
+};
+function mapState(state) {
+  const { loan } = state;
+  return { loan };
 }
 
 export default connect(mapState, { submitLoanRequest, changeLoanRequest })(

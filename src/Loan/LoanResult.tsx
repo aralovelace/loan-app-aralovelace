@@ -1,14 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
-import { computeLoan } from "./state/selectors";
+import { computeLoan } from "../state";
 
-function mapState(state) {
-  return {
-    loan: computeLoan(state),
-  };
-}
+const mapState = (state) => {
+  return computeLoan(state.loan);
+};
 
-function LoanResult({ loan }) {
+const LoanResult = (loan) => {
   return (
     <div className="mt-5">
       <div className="">
@@ -21,5 +19,5 @@ function LoanResult({ loan }) {
       </div>
     </div>
   );
-}
+};
 export default connect(mapState)(LoanResult);

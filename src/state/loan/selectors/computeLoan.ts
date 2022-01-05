@@ -1,4 +1,4 @@
-function computeLoan({ loanRequest }) {
+const computeLoan = ({ loanRequest }) => {
   const amount = Number.parseInt(loanRequest.amount);
   const term = Number.parseInt(loanRequest.term);
   const interest = Number.parseInt(loanRequest.interest);
@@ -9,6 +9,6 @@ function computeLoan({ loanRequest }) {
     totalInterest,
     totalPaid,
   };
-}
+};
 
 export { computeLoan };

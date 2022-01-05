@@ -12,7 +12,7 @@ const initialState = Object.freeze({
   loanRequest: initialLoanRequest,
 });
 
-function changeLoanRequest(state, action) {
+const changeLoanRequest = (state, action) => {
   const input = action.payload;
   const loanRequestInput = {
     ...state.loanRequestInput,
@@ -22,12 +22,12 @@ function changeLoanRequest(state, action) {
     ...state,
     loanRequestInput,
   });
-}
+};
 
-function submitLoanRequest(state, action) {
+const submitLoanRequest = (state, action) => {
   const loanRequest = action.payload;
   return Object.freeze({ ...state, loanRequest });
-}
+};
 
 export default handleActions(
   {
@@ -36,3 +36,4 @@ export default handleActions(
   },
   initialState
 );
+
