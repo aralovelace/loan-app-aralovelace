@@ -5,9 +5,9 @@ import { preventDefault, withChange } from "../helpers";
 import { changeLoanRequest, submitLoanRequest } from "../state";
 import { connect } from "react-redux";
 
-const LoanForm = ({ loan, changeLoanRequest, submitLoanRequest }) => {
+const LoanForm = ({ loanRequest, changeLoanRequest, submitLoanRequest }) => {
   const handleChange = withChange(changeLoanRequest);
-  const handleSubmit = partial(submitLoanRequest, loan);
+  const handleSubmit = partial(submitLoanRequest, loanRequest);
 
   return (
     <form onSubmit={pipe(preventDefault, handleSubmit)}>
@@ -18,7 +18,7 @@ const LoanForm = ({ loan, changeLoanRequest, submitLoanRequest }) => {
         <input
           name="amount"
           type="number"
-          value={loan.loanRequest.amount}
+          value={loanRequest.amount}
           onChange={handleChange}
           required
           className="form-input ml-4"
@@ -31,7 +31,7 @@ const LoanForm = ({ loan, changeLoanRequest, submitLoanRequest }) => {
         <input
           name="term"
           type="number"
-          value={loan.loanRequest.term}
+          value={loanRequest.term}
           onChange={handleChange}
           required
           className="form-input ml-4"
@@ -44,7 +44,7 @@ const LoanForm = ({ loan, changeLoanRequest, submitLoanRequest }) => {
         <input
           name="interest"
           type="number"
-          value={loan.loanRequest.interest}
+          value={loanRequest.interest}
           onChange={handleChange}
           required
           className="form-input ml-4"
@@ -61,9 +61,10 @@ const LoanForm = ({ loan, changeLoanRequest, submitLoanRequest }) => {
     </form>
   );
 };
-function mapState(state) {
-  const { loan } = state;
-  return { loan };
+function mapState({ loan }){
+  return {
+    loanRequest: loan.loanRequestInput
+  }
 }
 
 export default connect(mapState, { submitLoanRequest, changeLoanRequest })(
