@@ -4,6 +4,8 @@ import LoanResult from "./Loan/LoanResult";
 import AddToast from "./Toasts/AddToast";
 import ToastList from "./Toasts/ToastList";
 import React from "react";
+import CitySearch from "./Weather/CitySearch";
+import CityList from "./Weather/CityList";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -36,6 +38,13 @@ const App = () => {
             >
               Toast
             </Tab>
+            <Tab
+              className="w-full py-2.5 text-sm leading-5 font-medium text-blue-700 rounded-lg
+            focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60
+            text-blue-100 hover:bg-white/[0.12] hover:text-white"
+            >
+              Weather
+            </Tab>
           </Tab.List>
 
           <Tab.Panels className="mt-2">
@@ -51,6 +60,10 @@ const App = () => {
             <Tab.Panel>
               <AddToast />
               <ToastList />
+            </Tab.Panel>
+            <Tab.Panel>
+              <CitySearch />
+              <CityList />
             </Tab.Panel>
           </Tab.Panels>
         </Tab.Group>
