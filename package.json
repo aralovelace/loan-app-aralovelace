@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craftjs/core": "^0.1.0-beta.20",
+    "@craftjs/layers": "^0.1.0-beta.20",
+    "@craftjs/utils": "^0.1.0-beta.20",
     "@headlessui/react": "^1.4.2",
     "@tailwindcss/forms": "^0.4.0",
     "@testing-library/jest-dom": "^5.16.1",
@@ -17,6 +20,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
+    "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "redux": "^4.1.2",
     "redux-actions": "^2.6.5",
