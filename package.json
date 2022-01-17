@@ -8,6 +8,7 @@
     "@craftjs/utils": "^0.1.0-beta.20",
     "@headlessui/react": "^1.4.2",
     "@material-ui/core": "^4.12.3",
+    "@mui/core": "^5.0.0-alpha.54",
     "@tailwindcss/forms": "^0.4.0",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
@@ -35,7 +36,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
