@@ -13,7 +13,6 @@ export const Text = ({
   const {
     connectors: { connect, drag },
     selected,
-    dragged,
     actions: { setProp },
   } = useNode((state) => ({
     selected: state.events.selected,
