@@ -10,10 +10,9 @@ import { Topbar } from "../Build/Topbar";
 import lz from "lzutf8";
 
 export default function BuildGUI() {
-  const [ setJson] = useState(null);
+  const [json, setJson] = useState(null);
 
   useEffect(() => {
-    // @ts-ignore
     const json = lz.decompress(lz.decodeBase64("Json State"));
     setJson(json);
   }, []);
