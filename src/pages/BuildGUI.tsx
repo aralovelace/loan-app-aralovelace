@@ -7,16 +7,8 @@ import { Toolbox } from "../Build/Toolbox.component";
 import { Image } from "../Build/Image.component";
 import { Textfield } from "../Build/Textfield.component";
 import { Topbar } from "../Build/Topbar";
-import lz from "lzutf8";
 
 export default function BuildGUI() {
-  const [json, setJson] = useState(null);
-
-  useEffect(() => {
-    const json = lz.decompress(lz.decodeBase64("Json State"));
-    setJson(json);
-  }, []);
-
   return (
     <Editor resolver={{ Text, Button, Card, Image, Textfield }}>
       <section className="w-full flex flex-row">
