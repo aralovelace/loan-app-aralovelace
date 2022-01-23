@@ -61,10 +61,10 @@ const LoanForm = ({ loanRequest, changeLoanRequest, submitLoanRequest }) => {
     </form>
   );
 };
-function mapState({ loan }){
+function mapState({ loan }) {
   return {
-    loanRequest: loan.loanRequestInput
-  }
+    loanRequest: loan.loanRequestInput,
+  };
 }
 
 export default connect(mapState, { submitLoanRequest, changeLoanRequest })(

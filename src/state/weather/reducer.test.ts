@@ -9,7 +9,7 @@ test("addCity add city", () => {
 });
 
 test("addCity does not add existing city", () => {
-  const cities = ['Malaysia'];
+  const cities = ["Malaysia"];
   const action = actions.addCity("Malaysia");
   const expectOutput = ["Malaysia"];
   expect(ListReducer(cities, action)).toEqual(expectOutput);

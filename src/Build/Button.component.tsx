@@ -1,5 +1,5 @@
-import React  from "react";
-import { useNode } from '@craftjs/core';
+import React from "react";
+import { useNode } from "@craftjs/core";
 
 export const Button = ({ text }: { text: string }) => {
   const {

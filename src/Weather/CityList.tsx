@@ -1,6 +1,6 @@
 import React from "react";
 import CityItem from "./CityItem";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
 const CityList = ({ cities }) => {
   return (
@@ -16,4 +16,4 @@ const mapState = ({ cities }) => {
   return { cities };
 };
 
-export default  connect(mapState)(CityList);
+export default connect(mapState)(CityList);

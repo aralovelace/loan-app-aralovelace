@@ -6,12 +6,14 @@ import { Button } from "../Build/Button.component";
 import { Toolbox } from "../Build/Toolbox.component";
 import { Image } from "../Build/Image.component";
 import { Textfield } from "../Build/Textfield.component";
+import { Topbar } from "../Build/Topbar";
 
 export default function BuildGUI() {
   return (
     <Editor resolver={{ Text, Button, Card, Image, Textfield }}>
       <section className="w-full flex flex-row">
         <div className="w-1/2 pt-10 pl-5 bg-gray-400">
+          <Topbar />
           <Frame>
             <Element className="bg-gray-400" is="div" canvas>
               <Text text="This is a sample TEXT" fontSize={12} />

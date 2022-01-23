@@ -11,7 +11,10 @@ const clearCityName = (name, action) => {
   return "";
 };
 
-export default handleActions({
-  [actions.changeCityName]: changeCityName,
-  [actions.addCity]: clearCityName,
-}, initialState);
+export default handleActions(
+  {
+    [actions.changeCityName]: changeCityName,
+    [actions.addCity]: clearCityName,
+  },
+  initialState
+);
