@@ -10,8 +10,7 @@ import { Topbar } from "../Build/Topbar";
 import lz from "lzutf8";
 
 export default function BuildGUI() {
-  const [enabled, setEnabled] = useState(true);
-  const [json, setJson] = useState(null);
+  const [ setJson] = useState(null);
 
   useEffect(() => {
     // @ts-ignore

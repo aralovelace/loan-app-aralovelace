@@ -9,7 +9,7 @@ export const Image = ({ image }: { image: string }) => {
   return (
     <Paper className="my-4 w-40 flex justify-center">
       <div ref={(ref) => connect(drag(ref))}>
-        <img width={100} src={`/${image}`} alt="image" />
+        <img width={100} src={`/${image}`} alt="react" />
       </div>
     </Paper>
   );

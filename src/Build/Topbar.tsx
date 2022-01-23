@@ -8,10 +8,8 @@ import {
   Dialog,
   DialogTitle,
   DialogContent,
-  DialogContentText,
   DialogActions,
   TextField,
-  Snackbar,
 } from "@material-ui/core";
 import { useEditor } from "@craftjs/core";
 import lz from "lzutf8";
@@ -23,7 +21,7 @@ export const Topbar = () => {
   }));
 
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [snackbarMessage, setSnackbarMessage] = useState();
+  const [ setSnackbarMessage] = useState();
   const [stateToLoad, setStateToLoad] = useState(null);
 
   return (
