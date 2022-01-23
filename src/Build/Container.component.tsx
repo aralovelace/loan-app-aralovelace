@@ -1,5 +1,5 @@
-import { useNode, UserComponent } from '@craftjs/core';
-import React from 'react';
+import { useNode, UserComponent } from "@craftjs/core";
+import React from "react";
 
 export const Container: UserComponent = ({ children }) => {
   const {

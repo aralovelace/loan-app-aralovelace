@@ -1,9 +1,15 @@
-import { useNode } from '@craftjs/core';
-import React, { useEffect, useState } from 'react';
-import ContentEditable from 'react-contenteditable';
-import { FormControl, FormLabel, Slider } from '@material-ui/core';
+import { useNode } from "@craftjs/core";
+import React, { useEffect, useState } from "react";
+import ContentEditable from "react-contenteditable";
+import { FormControl, FormLabel, Slider } from "@material-ui/core";
 
-export const Text = ({ text, fontSize }: { text: string; fontSize: number }) => {
+export const Text = ({
+  text,
+  fontSize,
+}: {
+  text: string;
+  fontSize: number;
+}) => {
   const {
     connectors: { connect, drag },
     selected,
@@ -20,7 +26,11 @@ export const Text = ({ text, fontSize }: { text: string; fontSize: number }) => 
   }, [selected]);
 
   return (
-    <div className="my-4" ref={(ref) => connect(drag(ref))} onClick={(e) => setEditable(true)}>
+    <div
+      className="my-4"
+      ref={(ref) => connect(drag(ref))}
+      onClick={(e) => setEditable(true)}
+    >
       <ContentEditable
         disabled={!editable}
         html={text}

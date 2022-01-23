@@ -1,11 +1,14 @@
-import * as actions from '../state/weather/actions';
-import { fetchCityWeather } from './fetch-city-weather.api';
+import * as actions from "../state/weather/actions";
+import { fetchCityWeather } from "./fetch-city-weather.api";
 
 const fetchCity = (cityName: string) => {
   return (dispatch) => {
-    fetchCityWeather(cityName).then(selectTemperature).then(actions.addCity).then(dispatch)
-  }
-}
+    fetchCityWeather(cityName)
+      .then(selectTemperature)
+      .then(actions.addCity)
+      .then(dispatch);
+  };
+};
 
 const selectTemperature = (response) => {
   const { id, name } = response.data;
@@ -13,8 +16,8 @@ const selectTemperature = (response) => {
   return {
     id,
     name,
-    temp
-  }
-}
+    temp,
+  };
+};
 
 export { fetchCity };
