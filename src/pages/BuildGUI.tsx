@@ -1,5 +1,5 @@
 import { Editor, Element, Frame } from "@craftjs/core";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Card } from "../Build/Card.component";
 import { Text } from "../Build/Text.component";
 import { Button } from "../Build/Button.component";

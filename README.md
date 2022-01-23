@@ -24,3 +24,6 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### `npm run build`
 
+Pages:
+
+- Craft.JS - http://localhost:3000/build
